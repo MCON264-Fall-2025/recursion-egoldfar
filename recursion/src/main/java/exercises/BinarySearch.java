@@ -35,25 +35,25 @@ public class BinarySearch {
 
     // TODO: Implement recursively. DO NOT convert to a loop.
     private static int search(int[] a, int target, int lo, int hi) {
-        if(lo > hi) {
+        if (lo > hi) {
             return -1; // Base case 1: not found
         }
-        if(lo == hi) {
+        if (lo == hi) {
             return a[lo] == target ? lo : -1; // Base case 2: single element
         }
-        if(lo + 1 == hi) {
-            if(a[lo] == target) {
+        if (lo + 1 == hi) {
+            if (a[lo] == target) {
                 return lo; // Check left
-            } else if(a[hi] == target) {
+            } else if (a[hi] == target) {
                 return hi; // Check right
             } else {
                 return -1; // Not found
             }
         }
-        int mid = lo + (hi - lo) / 2;
-        if(a[mid] == target) {
+        int mid = (lo + hi) / 2;
+        if (a[mid] == target) {
             return mid; // Found at mid
-        } else if(a[mid] > target) {
+        } else if (a[mid] > target) {
             return search(a, target, lo, mid - 1); // Search left half
         } else {
             return search(a, target, mid + 1, hi); // Search right half
