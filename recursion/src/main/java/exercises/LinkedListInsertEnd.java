@@ -24,7 +24,7 @@ public class LinkedListInsertEnd {
 
     public static <T> Node<T> insertAtEnd(Node<T> head, T value) {
 
-        if(head == null) {
+        if (head == null) {
             return new Node<>(value);
         }
         if(head.next == null) {
