@@ -50,7 +50,7 @@ public class BinarySearch {
                 return -1; // Not found
             }
         }
-        int mid = (lo + hi) / 2;
+        int mid = lo + (hi - lo) / 2;
         if(a[mid] == target) {
             return mid; // Found at mid
         } else if(a[mid] > target) {
